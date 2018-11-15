@@ -19,6 +19,7 @@
                 <slot name="cell" :data="item.data"></slot>
             </div>
         </div>
+        <slot name="endList"></slot>
     </div>
 </template>
 
