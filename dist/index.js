@@ -139,6 +139,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 var _SectionManager = __webpack_require__(4);
 
@@ -690,7 +691,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._t("cell", null, {
       data: item.data
     })], 2)
-  }))])
+  })), _vm._v(" "), _vm._t("endList")], 2)
 },staticRenderFns: []}
 
 /***/ }),
