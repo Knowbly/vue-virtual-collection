@@ -520,6 +520,7 @@ exports.default = SectionManager;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.VirtualCollection = undefined;
 
 var _vue = __webpack_require__(1);
 
@@ -538,6 +539,7 @@ var plugin = {
 };
 
 exports.default = plugin;
+exports.VirtualCollection = _VirtualCollection2.default;
 
 /***/ }),
 /* 6 */
