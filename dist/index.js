@@ -187,10 +187,18 @@ exports.default = {
     watch: {
         collection: function collection() {
             this.init();
+        },
+        outerStyle: function outerStyle(val, oldVal) {
+            if (JSON.stringify(val) !== JSON.stringify(oldVal)) {
+                this.$emit("boundChange");
+            }
         }
     },
     created: function created() {
         this.init();
+    },
+    mounted: function mounted() {
+        this.$emit("boundChange");
     },
 
     methods: {
@@ -198,6 +206,7 @@ exports.default = {
             this._sectionManager = new _SectionManager2.default(this.sectionSize);
             this.registerCellsToSectionManager();
             this.flushDisplayItems();
+            this.$emit("init");
         },
         registerCellsToSectionManager: function registerCellsToSectionManager() {
             var _this = this;

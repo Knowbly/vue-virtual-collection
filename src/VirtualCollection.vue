@@ -64,16 +64,25 @@ export default {
     watch: {
         collection() {
             this.init()
-        }
+        },
+        outerStyle(val, oldVal) {
+            if (JSON.stringify(val) !== JSON.stringify(oldVal)) {
+                this.$emit("boundChange");
+            }
+        },
     },
     created() {
         this.init()
+    },
+    mounted() {
+        this.$emit("boundChange");
     },
     methods: {
         init() {
             this._sectionManager = new SectionManager(this.sectionSize)
             this.registerCellsToSectionManager()
             this.flushDisplayItems()
+            this.$emit("init");
         },
         registerCellsToSectionManager() {
             if (!this._sectionManager) {
